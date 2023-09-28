@@ -1,0 +1,12 @@
+.data
+.text
+addi $s1, $zero, 20
+addi $s2, $zero, 30
+addi $s3, $zero, 40
+addi $s4, $zero, 50
+
+addi $t1, $s1, 10 #t1 <- b+10
+addi $t2, $s2, -5 #t2 <- c-5
+sub $t3, $s3, $s4 #t3 <- d - e
+add $s0, $t1, $t2 #t1 + t2
+sub $s0, $s0, $t3 #s0 - $t3

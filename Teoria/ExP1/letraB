@@ -1,0 +1,74 @@
+.data
+f_abc: .asciiz "ABC"
+f_acb: .asciiz "ACB"
+f_bac: .asciiz "BAC"
+f_bca: .asciiz "BCA"
+f_cab: .asciiz "CAB"
+f_cba: .asciiz "CBA"
+
+.text
+li $t1, 3
+li $t2, 1
+li $t3, 5
+
+#for int i = 0; i < 3 , i++
+#for int j = 2; j > 0, j++
+#if n[i] > n[j]
+#aux = n[j]
+#n[j] = n[i]
+#n[i] = aux
+
+#ou
+
+# if(A > B) and (A > C){
+#  if(B > C){ (A,B,C)}
+#  else (A, C, B)
+#} etc...
+
+bgt $t1, $t2, a_maior_b
+bgt $t2, $t1, b_maior_a
+bgt $t3, $t1, c_maior_a
+
+a_maior_b: bgt $t1, $t3, a_maior_todos
+j c_maior_todos
+b_maior_a: bgt $t2, $t3, b_maior_todos
+j c_maior_todos
+c_maior_a: bgt $t3, $t2, c_maior_todos
+j a_maior_todos
+
+a_maior_todos: bgt $t2, $t3, abc
+	#Printa a sequencia A, C, B
+	li $v0, 4
+	la $a0, f_acb
+	syscall
+	j fim
+b_maior_todos: bgt $t1, $t3, bac
+	#Printa a sequencia B, C, A
+	li $v0, 4
+	la $a0, f_bca
+	syscall
+	j fim
+c_maior_todos: bgt $t1, $t2, cab
+	li $v0, 4
+	la $a0, f_cba
+	syscall
+	j fim
+abc: #Printa a sequencia A, B, C 
+	li $v0, 4
+	la $a0, f_abc
+	syscall
+	j fim
+bac: #Printa a sequencia B, A, C 
+	li $v0, 4
+	la $a0, f_bac
+	syscall
+	j fim
+cab: #Printa a sequencia C, A, B
+	li $v0, 4
+	la $a0, f_cab
+	syscall
+	j fim
+
+fim:
+	li $v0, 10 #Exit
+	syscall

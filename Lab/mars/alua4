@@ -1,0 +1,10 @@
+.data #memoria -> Endereco inicial: 0x10010000
+
+c:.word 7,80,150 #criando um vetor de .word (cada valor vai ser de tamanho .word)(lembrando que isso ta em decimal)
+
+.text
+
+la $s1, c #pega o primeiro endereco 0x10010000
+lw, $t1, 0($s1) #load word, pegando a primeira posicao
+lw, $t2, 4($s1) #segunda posicao
+lw $t3, 8($s1) #terceira posicao

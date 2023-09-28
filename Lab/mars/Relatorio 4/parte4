@@ -1,0 +1,14 @@
+.text
+li $t1, 10 #contador i
+li $s1, 0 #contador cont
+
+loop:
+bgtz $t1, contagem
+j fim
+
+contagem:
+addi, $s1, $s1, 5
+subi, $t1, $t1, 2
+j loop
+
+fim:

@@ -1,0 +1,14 @@
+.text
+li $t0, 0x50 #load imediate ja coloca o valor direto no registrador
+li $t1, 0x40
+li $t2, 0x30
+li $t3, 0x20
+li $t4, 0x10
+
+slt $t6, $t2, $t1 #se $t2 for menor que $t1 $t6 vai pra 'true' (adiciona 1
+
+beq $t3, $t4, L1 #se $t3 == $t4 vai pro L1
+add $t0,$t1,$t2
+j fim
+L1: sub $t0,$t0,$t3
+fim:

@@ -1,0 +1,22 @@
+.text
+
+li $t0, 324
+li $t1, 100
+
+li $t2, 2018
+li $t3, 1970
+
+li $t4, 33
+li $t5, 66
+
+and $t7, $t0, $t1 
+and $s0, $t2, $t3
+and $s1, $t4, $t5
+
+or $s2, $t0, $t1 
+or $s3, $t2, $t3
+or $s4, $t4, $t5
+
+nor $s5, $t0, $t1 
+nor $s6, $t2, $t3
+nor $s7, $t4, $t5

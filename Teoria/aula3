@@ -1,0 +1,24 @@
+.data
+#Declaracao de variaveis
+.text
+#Corpo do programa
+addi $t1, $zero, 0x20 #$t1 recebe 0x20
+#aqui: #label para o j (jump)
+addi $t2, $zero, 0x50 #$t2 recebe 0x50
+xori $t3, $t1, 0x10203040 #Vai somar com $t1
+addi $t3, $t1, -0x10 #Faz subtracao de $t1 - 0x10 e armazena em $t3
+sub $t4,$t1,$t2
+#j aqui #Criou um laco de repeticao que volt
+
+addi $t1, $zero, 5 #$t1 recebe 5
+addi $t2, $zero, 3 #$t2 recebe 3
+div $t1, $t2
+mflo $t5 #Move from low -> parte inteira
+mfhi $t6 #Move from high -> parte fracionaria 
+
+#Dando overflow na multiplicacao
+addi $t1, $zero, 0xFEDCBAFF 
+addi $t2, $zero, 0xFFFEEAAD 
+mul $t4, $t1, $t2
+mflo $t5 #Move from low -> bits menos significativos (finais)
+mfhi $t6 #Move from high -> bits mais significativos

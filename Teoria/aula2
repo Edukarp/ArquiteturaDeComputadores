@@ -1,0 +1,17 @@
+.text
+
+#$t1 = 0x20; $t2 = 0x03, $t4 = 0x50
+addi $t1, $0, 0x20 #Soma imediata -> Nao vai pegar no registrador e sim na instrução
+addi $t2, $0, 0x30
+addi $t4, $0, 0x50
+
+#subtraindo e somando
+sub $t3, $t2, $t1
+add $t5, $t3, $t4
+subi $t6, $t5, 0x40 #Subtracao imediata
+
+or $t3, $t1, $t2 #"ou" seria uma soma sem 'transporte' mas seria uma soma logica binaria
+
+addi $t7, $t3, -0x10 #Seria a propria aplicacao do 'subi'
+
+#A representacao de um numero negativo eh represetada pelo seu complemeto

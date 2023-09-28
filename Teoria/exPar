@@ -1,0 +1,33 @@
+.data
+frase: .asciiz "Entre com um numero"
+frase_par: .asciiz "O numero eh par"
+frase_impar: .asciiz "O numero eh impar"
+
+.text
+li $v0, 4 #passando o servico 4 (print_string) para o registrador $v0
+la $a0, frase #guardando o endereco da 'frase'
+syscall
+
+#lendo valor digitado pelo usuario
+li $v0, 5
+syscall
+
+add $t1, $v0, $zero #movendo o valor digitado pra $t1
+li $t2, 2
+div $t1, $t2
+mfhi $t3 #o resto vai pra 'hi', aqui movendo do hi pra $t3
+
+beqz $t3, par
+li $v0, 4 #passando o servico 4 (print_string) para o registrador $v0
+la $a0, frase_impar
+syscall
+j fim
+
+par:
+li $v0, 4 #passando o servico 4 (print_string) para o registrador $v0
+la $a0, frase_par
+syscall
+
+fim: li, $v0,10 #passando o servico 10, 'exit' para encerrar o programa
+syscall
+

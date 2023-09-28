@@ -1,0 +1,16 @@
+#questao 1
+.data
+palvra1: .word 13 #Valor do label: 0x10010000
+palavra2: .word 0x15 #Valor do label: 0x10010004
+
+#questao 3
+.data
+palavra1: .word 13, 0x15 #mesma coisa que o exemplo da questao 1
+
+#questao 5
+.data
+cadeia: .ascii "abcde"
+octeto: .byte 0xff
+string: .asciiz "teste"
+
+

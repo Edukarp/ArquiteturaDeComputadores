@@ -1,0 +1,70 @@
+.text
+
+li $t1, 3
+li $t2, 4
+li $t3, 5
+
+Ex1:
+beq $t1, $t2, a_igual_b
+add $t2, $t1, $t3
+sub $t3, $t2, $t3
+j fim1
+        
+a_igual_b:
+  add $t3, $t1, $t2
+  sub $t1, $t2, $t3
+  j fim1
+  
+fim1:
+
+li $t1, 3
+li $t2, 4
+li $t3, 5
+
+Ex2:
+bne $t1, $t2, a_diferente_b
+add $t2, $t1, $t3
+sub $t3, $t2, $t3
+j fim2
+        
+a_diferente_b:
+  add $t3, $t1, $t2
+  sub $t1, $t2, $t3
+  j fim2
+  
+fim2:
+
+li $t1, 3
+li $t2, 4
+li $t3, 5
+
+Ex3:
+bgt $t1, $t2, a_maior_b
+sub $t2, $t1, $t3
+add $t3, $t2, $t3
+j fim3
+        
+a_maior_b:
+  sub $t3, $t1, $t2
+  add $t1, $t2, $t3
+  j fim3
+  
+fim3:
+
+li $t1, 3
+li $t2, 4
+li $t3, 5
+  
+Ex4:
+blt $t1, $t2, a_menor_b
+add $t2, $t1, $t3
+sub $t3, $t2, $t3
+j fim4
+        
+a_menor_b:
+  add $t3, $t1, $t2
+  sub $t1, $t2, $t3
+  j fim4
+  
+  
+fim4:

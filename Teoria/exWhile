@@ -1,0 +1,25 @@
+#While (save[i] == k)
+	#i = i + j
+
+.data
+dado1: .word 0x00000010
+dado2: .word 0x00000010
+dado3: .word 0x00000010
+dado4: .word 0x00000020
+
+.text
+li $s5,0x00000010 #valor a ser comparado (k)
+li $s6,0x10010000 #endereco base do vetor 'save'
+li $s3, 0 #inicializa o offset com zero
+li $s4, 1 #vai servir para o contador adicionando +1
+
+loop:
+	add $t1, $s3, $s3 #$t1 recebendo 2*offset
+	add $t1, $t1, $t1 #$t1 recebendo 4*offset
+	add $t1, $s6,$t1 #$t1 recebendo o endereco base somado ao offset (imagine que a cada 4 deslocamentos é uma posicao 1 de save[i]	
+	lw $t0, 0($t1) #Carrega a posicao i do vetor em $t0
+	bne $t0, $s5, fim
+	add $s3,$s3,$s4 #contador
+	j loop
+	
+fim:

@@ -1,0 +1,18 @@
+#Exercicio 1
+.text
+li $t0, 10
+li $t1, 25
+li $t2, 43
+li $t3, 89
+
+#deslocando pra direita em 8 bits
+srl $t4, $t0, 8
+srl $t5,$t1, 8
+srl $t6,$t2, 8
+srl $t7, $t3, 8
+
+#deslocando pra esquerda em 4 bits
+srl $s0, $t0, 4
+srl $s1,$t1, 4
+srl $s2,$t2, 4
+srl $s3, $t3, 4

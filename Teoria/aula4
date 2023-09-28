@@ -1,0 +1,19 @@
+.data
+num1: .word 0x10203040
+num2: .word 0x50607080
+num3: .word 0x90AABBCC
+
+.text
+lw $t1, num1 #carregar para $t1 o conteudo de num1 (lw - load word)
+lw $t2, num2
+lw $t3, num3
+#lh (load half word) lb (load byte) e assim por diante
+
+la $t0, num1 #carrega para $t0 o endereco de num1 (la - load adress)
+
+lw $t4, 4($t1) #carreca para $t4 o conteudo do endereco de $t1 deslocado em 4 posicoes (que vai ser num2)
+lw $t5, 8($t1) #carreca para $t5 o conteudo do endereco de $t1 deslocado em 8 posicoes (que vai ser num3)
+
+#Pegando so o '60' da num2
+la $t6, num2
+lb $t7, 2($t6) #o byte deslocado de 2 posicoes em num2 alocada em $t6

@@ -1,0 +1,37 @@
+.text
+
+#If
+li $t1, 18
+li $t2, 5
+
+bge $t1, 10, maior #se for maior ou igual a 10 desvia pra 'maior' se nao vai pra prox linha
+addi $t2, $t2, -1
+j fim1 #pula pra 'fim' pois é sequencial se nao acabaria entrando no 'maior'
+
+maior: addi $t2, $t2, 1
+
+fim1:
+
+#While
+li $t3, 2 #x = 2
+li $t4, 5 #y = 5
+
+loopWhile:
+bge $t3, 10, fim2 #eh um while x < 10 so que invertido bge, ou seja, se for maior igual a 10 vai pro fim
+addi $t3, $t3, 1 #x = x + 1
+addi $t4, $t4, 1 #y = y + 1
+j loopWhile
+
+fim2:
+
+#For
+li $s1, 1 #x = 1
+li $s2, 2 #y = 2
+
+loopFor:
+bge $s1, 10, fim3
+addi $s1, $s1, 1 #x = x + 1
+addi $s2, $s2, 1 #y = y + 1
+j loopFor
+
+fim3:

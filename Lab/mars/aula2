@@ -1,0 +1,12 @@
+.text
+li $t1, 10
+li $t2, 8
+
+and $t0, $t1, $t2
+andi $s0, $t1, 8
+
+slt $t4, $t1, $t8 #Verifica se $t1 < $t8 e guardando em $t4 0- False, 1-True
+slti $t5, $t2, 10
+
+sll $t6, $t1, 2 #deslocando 2 bits de $t1 pra esquerda e colocando em $t6
+srl $t7, $t1, 1 #deslocando 1 bits de $t1 pra direita e colocando em $t7
