@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <lib desc="jar#C:\Users\eduka\Downloads\cs3410.jar#edu.cornell.cs3410.Components" name="7">
+    <tool name="MIPSProgramROM">
+      <a name="contents" val=""/>
+    </tool>
+  </lib>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(440,90)" to="(440,160)"/>
+    <wire from="(400,70)" to="(460,70)"/>
+    <wire from="(60,170)" to="(60,300)"/>
+    <wire from="(460,70)" to="(460,330)"/>
+    <wire from="(640,320)" to="(640,330)"/>
+    <wire from="(520,310)" to="(570,310)"/>
+    <wire from="(140,350)" to="(200,350)"/>
+    <wire from="(700,320)" to="(700,450)"/>
+    <wire from="(460,330)" to="(640,330)"/>
+    <wire from="(90,300)" to="(270,300)"/>
+    <wire from="(370,400)" to="(680,400)"/>
+    <wire from="(920,100)" to="(920,230)"/>
+    <wire from="(530,220)" to="(570,220)"/>
+    <wire from="(610,320)" to="(610,350)"/>
+    <wire from="(210,370)" to="(210,390)"/>
+    <wire from="(810,180)" to="(810,200)"/>
+    <wire from="(810,260)" to="(810,280)"/>
+    <wire from="(680,320)" to="(680,400)"/>
+    <wire from="(230,350)" to="(270,350)"/>
+    <wire from="(400,90)" to="(440,90)"/>
+    <wire from="(810,200)" to="(830,200)"/>
+    <wire from="(810,260)" to="(830,260)"/>
+    <wire from="(290,110)" to="(380,110)"/>
+    <wire from="(60,300)" to="(90,300)"/>
+    <wire from="(350,450)" to="(700,450)"/>
+    <wire from="(90,300)" to="(90,340)"/>
+    <wire from="(400,80)" to="(420,80)"/>
+    <wire from="(80,360)" to="(100,360)"/>
+    <wire from="(890,230)" to="(920,230)"/>
+    <wire from="(190,390)" to="(210,390)"/>
+    <wire from="(530,100)" to="(530,220)"/>
+    <wire from="(530,100)" to="(920,100)"/>
+    <wire from="(350,140)" to="(350,450)"/>
+    <wire from="(370,160)" to="(370,400)"/>
+    <wire from="(270,300)" to="(270,350)"/>
+    <wire from="(90,340)" to="(100,340)"/>
+    <wire from="(530,350)" to="(610,350)"/>
+    <wire from="(420,80)" to="(420,140)"/>
+    <wire from="(730,280)" to="(810,280)"/>
+    <wire from="(730,180)" to="(810,180)"/>
+    <wire from="(850,270)" to="(850,320)"/>
+    <wire from="(370,160)" to="(440,160)"/>
+    <wire from="(350,140)" to="(420,140)"/>
+    <comp lib="6" loc="(642,95)" name="Text">
+      <a name="text" val="Dado a ser Guardado"/>
+    </comp>
+    <comp lib="6" loc="(808,352)" name="Text">
+      <a name="text" val="Operacao a ser Realizada"/>
+    </comp>
+    <comp lib="6" loc="(368,54)" name="Text">
+      <a name="text" val="Funct"/>
+      <a name="font" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(520,310)" name="Clock"/>
+    <comp lib="7" loc="(860,230)" name="Mips ALU"/>
+    <comp lib="6" loc="(367,73)" name="Text">
+      <a name="text" val="Destino"/>
+      <a name="font" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="7" loc="(730,230)" name="RegisterFile"/>
+    <comp lib="6" loc="(499,295)" name="Text">
+      <a name="text" val="Clock"/>
+    </comp>
+    <comp lib="6" loc="(349,96)" name="Text">
+      <a name="text" val="Primeira Origem"/>
+      <a name="font" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="6" loc="(455,229)" name="Text">
+      <a name="text" val="End. a ser Gravado"/>
+    </comp>
+    <comp lib="7" loc="(290,110)" name="MIPSProgramROM">
+      <a name="contents">ADDU $13, $22, $6
+</a>
+    </comp>
+    <comp lib="6" loc="(374,63)" name="Text">
+      <a name="text" val="SA"/>
+      <a name="font" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="3" loc="(140,350)" name="Adder">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(80,360)" name="Constant">
+      <a name="width" val="32"/>
+      <a name="value" val="0x4"/>
+    </comp>
+    <comp lib="0" loc="(190,390)" name="Clock"/>
+    <comp lib="0" loc="(530,350)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Habilita Gravacao"/>
+    </comp>
+    <comp lib="6" loc="(416,30)" name="Text">
+      <a name="text" val="Ccodigo de Maquina"/>
+    </comp>
+    <comp lib="4" loc="(230,350)" name="Register">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="6" loc="(347,83)" name="Text">
+      <a name="text" val="Segunda Origem"/>
+      <a name="font" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(380,110)" name="Splitter">
+      <a name="fanout" val="6"/>
+      <a name="incoming" val="32"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="bit10" val="1"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="2"/>
+      <a name="bit13" val="2"/>
+      <a name="bit14" val="2"/>
+      <a name="bit15" val="2"/>
+      <a name="bit16" val="3"/>
+      <a name="bit17" val="3"/>
+      <a name="bit18" val="3"/>
+      <a name="bit19" val="3"/>
+      <a name="bit20" val="3"/>
+      <a name="bit21" val="4"/>
+      <a name="bit22" val="4"/>
+      <a name="bit23" val="4"/>
+      <a name="bit24" val="4"/>
+      <a name="bit25" val="4"/>
+      <a name="bit26" val="5"/>
+      <a name="bit27" val="5"/>
+      <a name="bit28" val="5"/>
+      <a name="bit29" val="5"/>
+      <a name="bit30" val="5"/>
+      <a name="bit31" val="5"/>
+    </comp>
+    <comp lib="6" loc="(560,413)" name="Text">
+      <a name="text" val="End. do Registrador Lido por A"/>
+    </comp>
+    <comp lib="0" loc="(850,320)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(589,444)" name="Text">
+      <a name="text" val="End do Registrador Lido por B"/>
+    </comp>
+    <comp lib="6" loc="(377,103)" name="Text">
+      <a name="text" val="OP"/>
+      <a name="font" val="SansSerif plain 9"/>
+    </comp>
+  </circuit>
+</project>

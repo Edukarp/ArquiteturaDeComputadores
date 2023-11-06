@@ -1,0 +1,24 @@
+.data 
+a: .word 4, 5
+j: .word 0
+
+.text
+
+la,$s1, a
+la,$s5 j
+
+lw $t5, 0($s5)
+lw $t1, 0($s1)
+lw $t2, 4($s1)
+blt $t1, 5, TRUE
+addi $t5, $t2, 10 
+sw $t5, 0($s5)
+
+ j FIM 
+ 
+ TRUE:
+ addi $t1, $t5, 2
+ sw, $t1, 0($s1)
+ 
+ FIM:
+ 

@@ -1,0 +1,40 @@
+.data 
+
+fraseEntrada: .asciiz "Entre com o valor de N"
+N: .word 0
+
+.text
+
+la, $s1, N
+li $s4, 0 #quadrado da soma
+li $s5, 0 #soma dos quadrados
+
+li $v0, 4
+la $a0, fraseEntrada
+syscall
+
+li, $v0, 5
+syscall
+
+add $t1, $v0, $0
+sw $t1, 0($s1)
+
+LOOP:
+blez $t1, FIM
+add $s4, $s4, $t1 #somando cada valor
+#somando cada quadrado
+mul $t2, $t1, $t1
+add $s5, $s5, $t2
+
+#subtraindo N como contador e salvando na memoria
+subi $t1, $t1, 1
+sw $t1, 0($s1)
+
+j LOOP
+
+FIM:
+mul $s4, $s4, $s4 #fazendo o quadrado da soma
+
+sub $s7, $s4, $s5 #Resposta
+
+li, $v0, 10 #Encerrando o programa

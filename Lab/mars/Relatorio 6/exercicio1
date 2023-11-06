@@ -1,0 +1,24 @@
+.data
+a: .word 0x00
+b: .word 0x01
+c: .word 0x02
+
+.text
+la $s1, a
+lw $t1, 0($s1)
+la $s2, b
+lw $t2, 0($s2)
+la $s3, c
+lw $t3, 0($s3)
+
+#a[10] = b - c
+sub $t4,$t2,$t3
+sw $t4, 40($1)
+
+#b[245] = a + b
+add $t5, $t1, $t2
+sw $t5, 980($s2)
+
+#c[0] = b - a
+sub $t6, $t2, $t1
+sw $t6, 0($s3)
